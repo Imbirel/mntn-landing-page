@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: -490px;
+    padding: 0 229px;
+}
+
+.article {
+    z-index: 2;
+    display: flex;
+    gap: 114px;
+    padding: 100px 0;
+}
+
+.articleContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    padding: 141px 0 140px 150px;
+}
+
+.articleNumber {
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    z-index: 1;
+}
+
+.subtitle {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: var(--color-accent);
+    text-transform: uppercase;
+}
+
+.text {
+    line-height: 32px;
+}
+
+.readMore {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: fit-content;
+    color: var(--color-accent);
+}

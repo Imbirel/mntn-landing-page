@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../src/assets/fonts/SansSerif-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../src/assets/fonts/SansSerif-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../src/assets/fonts/SansSerif-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Chronicle Display';
+  src: url('../src/assets/fonts/SerifDisplay-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Chronicle Display';
+  src: url('../src/assets/fonts/SerifDisplay-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+	--color-background: #0B1D26;
+	--color-text: #FFFFFF;
+	--color-accent: #FBD784;
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+	background-color: var(--color-background);
+  font: 18px 'Gilroy', sans-serif;
+  font-weight: 700;
+  color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+a:hover,
+a.active {
+  color: var(--color-accent);
+  transition: color 0.25s;
+}
+
+h1 {
+  font: 88px 'Chronicle Display', serif;
+  font-weight: 600;
+  line-height: 100px;
+}
+
+h2 {
+  max-width: 550px;
+  font: 64px 'Chronicle Display', serif;
+  font-weight: 600;
+}
+
+h3 {
+  font: 24px 'Gilroy', sans-serif;
+  font-weight: 700;
+  line-height: 32px;
+  color: var(--color-accent);
+}

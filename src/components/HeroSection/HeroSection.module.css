@@ -1,0 +1,60 @@
+.section {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    height: 1600px;
+    background: url('../src/assets/images/bg-image-grass.png'), url('../src/assets/images/bg-image-mountains.png'), url('../src/assets/images/bg-image-sky.png');
+    background-repeat: no-repeat;
+    background-position: center 620px, center 350px, center 0%;
+}
+
+.section::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    content: "";
+    display: block;
+    height: 80%;
+    background: linear-gradient(330.24deg, rgba(11, 29, 38, 0) 31.06%, #0b1d26 108.93%);
+}
+
+.section::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 700px;
+    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 61.38%);
+}
+
+.container {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 32px;
+    max-width: 950px;
+    margin-top: 287px;
+    pointer-events: none;
+}
+
+.subtitle {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: var(--color-accent);
+    text-transform: uppercase;
+}
+
+.scrolldown {
+    display: flex;
+    gap: 16px;
+    width: fit-content;
+    pointer-events: all;
+}
