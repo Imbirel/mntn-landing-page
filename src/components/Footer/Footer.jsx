@@ -5,7 +5,7 @@ export const Footer = function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerInfo}>
         <div>
-          <img loading="lazy" src="../src/assets/logos/logo.svg" alt="logo" />
+          <span className={styles.mntn}>MNTN</span>
           <p className={styles.footerText}>
             Get out there & discover your next slope, mountain & destination!
           </p>

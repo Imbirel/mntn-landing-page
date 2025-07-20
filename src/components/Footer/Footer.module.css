@@ -13,6 +13,12 @@
     height: 280px;
 }
 
+.mntn {
+    font: 32px 'Chronicle Display', serif;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
 .footerText {
     max-width: 300px;
     margin-top: 24px;

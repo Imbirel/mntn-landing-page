@@ -1,39 +1,43 @@
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../src/assets/fonts/SansSerif-Bold.ttf') format('truetype');
-  font-weight: 700;
+  font-family: "Chronicle Display";
   font-style: normal;
-}
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../src/assets/fonts/SansSerif-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../src/assets/fonts/SansSerif-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Chronicle Display';
-  src: url('../src/assets/fonts/SerifDisplay-Semibold.otf') format('opentype');
   font-weight: 600;
-  font-style: normal;
+  src: url("/fonts/Chronicle-Display-Semibold.woff2") format("woff2");
+  font-display: swap;
 }
 @font-face {
-  font-family: 'Chronicle Display';
-  src: url('../src/assets/fonts/SerifDisplay-Bold.otf') format('opentype');
-  font-weight: 700;
+  font-family: "Chronicle Display";
   font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/Chronicle-Display-Black.woff2") format("woff2");
+  font-display: optional;
+}
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Gilroy-Medium.woff2") format("woff2");
+  font-display: optional;
+}
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Gilroy-Bold.woff2") format("woff2");
+  font-display: optional;
+}
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/Gilroy-Extrabold.woff2") format("woff2");
+  font-display: optional;
 }
 
 :root {
 	--color-background: #0B1D26;
 	--color-text: #FFFFFF;
 	--color-accent: #FBD784;
-
 }
 
 * {
@@ -52,7 +56,7 @@ html, body {
 }
 
 html {
-	background-color: var(--color-background);
+  background-color: var(--color-background);
   font: 18px 'Gilroy', sans-serif;
   font-weight: 700;
   color: var(--color-text);

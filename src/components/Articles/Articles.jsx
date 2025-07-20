@@ -58,13 +58,20 @@ export const Articles = function Articles() {
         </div>
         <img
           loading="lazy"
-          class="article__img"
-          src="../src/assets/images/01.png"
+          src="/images/01.webp"
+          width="566"
+          height="720"
           alt="A men walking on mountain"
         />
       </article>
       <article id="article-02" className={styles.article}>
-        <img loading="lazy" src="../src/assets/images/02.png" alt="A man on top of a camel" />
+        <img
+          loading="lazy"
+          src="/images/02.webp"
+          width="566"
+          height="720"
+          alt="A man on top of a camel"
+        />
         <div className={styles.articleContent}>
           <div className={styles.articleNumber}>
             <svg
@@ -171,7 +178,13 @@ export const Articles = function Articles() {
             </svg>
           </a>
         </div>
-        <img loading="lazy" src="../src/assets/images/03.png" alt="A man holding a compass" />
+        <img
+          loading="lazy"
+          src="/images/03.webp"
+          width="566"
+          height="720"
+          alt="A man holding a compass"
+        />
       </article>
     </div>
   );

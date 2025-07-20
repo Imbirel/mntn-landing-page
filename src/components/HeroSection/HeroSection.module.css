@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     height: 1600px;
-    background: url('../src/assets/images/bg-image-grass.png'), url('../src/assets/images/bg-image-mountains.png'), url('../src/assets/images/bg-image-sky.png');
+    background: url('/images/bg-image-grass.webp'), url('/images/bg-image-mountains.webp'), url('/images/bg-image-sky.webp');
     background-repeat: no-repeat;
     background-position: center 620px, center 350px, center 0%;
 }
