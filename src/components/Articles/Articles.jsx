@@ -3,10 +3,12 @@ import styles from './Articles.module.css';
 export const Articles = function Articles() {
   return (
     <div className={styles.container}>
+      <div className={styles.gradient} />
       <article id="article-01" className={styles.article}>
         <div className={styles.articleContent}>
           <div className={styles.articleNumber}>
             <svg
+              aria-hidden="true"
               width="215"
               height="176"
               viewBox="0 0 215 176"
@@ -22,6 +24,7 @@ export const Articles = function Articles() {
           </div>
           <p className={styles.subtitle}>
             <svg
+              aria-hidden="true"
               width="72"
               height="2"
               viewBox="0 0 72 2"
@@ -39,7 +42,7 @@ export const Articles = function Articles() {
             ratings set by various websites like All Trails and Modern Hiker. What type of hiker are
             you – novice, moderate, advanced moderate, expert, or expert backpacker?
           </p>
-          <a href="#article-01" className={styles.readMore}>
+          <a href="#" className={styles.readMore}>
             read more
             <svg
               aria-hidden="true"
@@ -75,6 +78,7 @@ export const Articles = function Articles() {
         <div className={styles.articleContent}>
           <div className={styles.articleNumber}>
             <svg
+              aria-hidden="true"
               width="258"
               height="176"
               viewBox="0 0 258 176"
@@ -90,6 +94,7 @@ export const Articles = function Articles() {
           </div>
           <p className={styles.subtitle}>
             <svg
+              aria-hidden="true"
               width="72"
               height="2"
               viewBox="0 0 72 2"
@@ -107,7 +112,7 @@ export const Articles = function Articles() {
             typical mistake hiking beginners make is wearing jeans and regular clothes, which will
             get heavy and chafe wif they get sweaty or wet.
           </p>
-          <a href="#article-02" className={styles.readMore}>
+          <a href="#" className={styles.readMore}>
             read more
             <svg
               aria-hidden="true"
@@ -129,6 +134,7 @@ export const Articles = function Articles() {
         <div className={styles.articleContent}>
           <div className={styles.articleNumber}>
             <svg
+              aria-hidden="true"
               width="260"
               height="176"
               viewBox="0 0 260 176"
@@ -144,6 +150,7 @@ export const Articles = function Articles() {
           </div>
           <p className={styles.subtitle}>
             <svg
+              aria-hidden="true"
               width="72"
               height="2"
               viewBox="0 0 72 2"
@@ -161,7 +168,7 @@ export const Articles = function Articles() {
             to know what my next landmark is as I hike. For example, I’ll read the guide and know
             that say, in a mile, I make a right turn at the junction..
           </p>
-          <a href="#article-03" className={styles.readMore}>
+          <a href="#" className={styles.readMore}>
             read more
             <svg
               aria-hidden="true"

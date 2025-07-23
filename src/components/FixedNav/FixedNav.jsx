@@ -43,7 +43,7 @@ export const FixedNav = function FixedNav() {
       <aside>
         <ul className={styles.slider}>
           <li>
-            <a href="#">Start</a>
+            <a href="#hero">Start</a>
           </li>
           <li>
             <a href="#article-01">01</a>

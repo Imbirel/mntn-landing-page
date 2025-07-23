@@ -1,6 +1,6 @@
 .container {
     position: fixed;
-    z-index: 2;
+    z-index: 6;
     display: flex;
     justify-content: space-between;
     width: 100%;

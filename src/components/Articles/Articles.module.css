@@ -1,12 +1,25 @@
 .container {
+    position: relative;
     display: flex;
     flex-direction: column;
     margin-top: -490px;
     padding: 0 229px;
 }
 
+.gradient {
+    position: absolute;
+    top: -12%;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    content: "";
+    display: block;
+    height: 700px;
+    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 75%);
+}
+
 .article {
-    z-index: 2;
+    z-index: 6;
     display: flex;
     gap: 114px;
     padding: 100px 0;

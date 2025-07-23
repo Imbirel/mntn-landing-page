@@ -7,18 +7,19 @@ export const Header = function Header() {
       <nav>
         <ul className={styles.ul}>
           <li>
-            <a href="/equipment">Equipment</a>
+            <a href="#">Equipment</a>
           </li>
           <li>
-            <a href="/about">About us</a>
+            <a href="#">About us</a>
           </li>
           <li>
-            <a href="/blog">Blog</a>
+            <a href="#">Blog</a>
           </li>
         </ul>
       </nav>
-      <a href="/account" className={styles.account}>
+      <a href="#" className={styles.account}>
         <svg
+          aria-hidden="true"
           width="24"
           height="24"
           viewBox="0 0 24 24"
