@@ -23,6 +23,19 @@
     pointer-events: none;
 }
 
+.navContainer {
+  position: relative;
+}
+
+.tracker {
+  position: absolute;
+  right: 0;
+  width: 3px;
+  height: 58px;
+  background: var(--color-text);
+  transition: top 0.3s ease;
+}
+
 .slider {
     display: flex;
     flex-direction: column;
