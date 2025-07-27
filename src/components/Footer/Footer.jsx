@@ -17,19 +17,19 @@ export const Footer = function Footer() {
           <h3>More on The Blog</h3>
           <ul className={styles.links}>
             <li>
-              <a href="#">About MNTN</a>
+              <a href="/">About MNTN</a>
             </li>
             <li>
-              <a href="#">Contributors & Writers</a>
+              <a href="/">Contributors & Writers</a>
             </li>
             <li>
-              <a href="#">Write For Us</a>
+              <a href="/">Write For Us</a>
             </li>
             <li>
-              <a href="#">Contact Us</a>
+              <a href="/">Contact Us</a>
             </li>
             <li>
-              <a href="#">Privacy Policy</a>
+              <a href="/">Privacy Policy</a>
             </li>
           </ul>
         </div>
@@ -37,13 +37,13 @@ export const Footer = function Footer() {
           <h3>More on MNTN</h3>
           <ul className={styles.links}>
             <li>
-              <a href="#">The Team</a>
+              <a href="/">The Team</a>
             </li>
             <li>
-              <a href="#">Jobs</a>
+              <a href="/">Jobs</a>
             </li>
             <li>
-              <a href="#">Press</a>
+              <a href="/">Press</a>
             </li>
           </ul>
         </div>

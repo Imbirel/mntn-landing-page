@@ -1,20 +1,19 @@
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './HeroSection.module.css';
+import { SvgLine } from '../Svg/SvgLine';
 
-const skySpeed = 1.2;
-const mountainsSpeed = 0.5;
-const grassSpeed = 0.2;
-const textSpeed = 0.6;
-const windowHeightValue = 1000;
-const maxValue = 1;
-const minValue = 0;
+const SKY_SPEED = 1.2;
+const MOUNTAINS_SPEED = 0.4;
+const GRASS_SPEED = 0.2;
+const TEXT_SPEED = 0.6;
+const WINDOW_HEIGHT_VALUE = 1000;
 
-const clamp = (value) => 1 - Math.min(Math.max(value / windowHeightValue, minValue), maxValue);
+const clamp = (value) => 1 - Math.min(Math.max(value / WINDOW_HEIGHT_VALUE, 0), 1);
 
 export const HeroSection = function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -27,47 +26,34 @@ export const HeroSection = function HeroSection() {
     <section id="hero" className={styles.section}>
       <div
         className={styles.skyLayer}
-        style={{ transform: `translateY(${-scrollY * skySpeed}px)` }}
+        style={{ transform: `translateY(${-scrollY * SKY_SPEED}px)` }}
       />
 
       <div
         className={styles.mountainsLayer}
-        style={{ transform: `translateY(${-scrollY * mountainsSpeed}px)` }}
+        style={{ transform: `translateY(${-scrollY * MOUNTAINS_SPEED}px)` }}
       />
 
       <div
         className={styles.grassLayer}
-        style={{ transform: `translateY(${-scrollY * grassSpeed}px)` }}
+        style={{ transform: `translateY(${-scrollY * GRASS_SPEED}px)` }}
       />
 
       <div
         className={styles.container}
         style={{
-          transform: `translateY(${scrollY * textSpeed}px)`,
+          transform: `translateY(${scrollY * TEXT_SPEED}px)`,
           opacity: `${clamp(scrollY)}`,
         }}
       >
         <p className={styles.subtitle}>
-          <svg
-            aria-hidden="true"
-            width="72"
-            height="2"
-            viewBox="0 0 72 2"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect width="72" height="2" fill="currentcolor" />
-          </svg>
-          A Hiking guide
+          <SvgLine />A Hiking guide
         </p>
         <h1>Be Prepared For The Mountains And Beyond!</h1>
         <a href="#article-01" className={styles.scrolldown}>
           scroll down
           <svg aria-hidden="true" width="16" height="24" viewBox="0 0 16 24">
-            <path
-              d="M16 16L14.59 14.59L9 20.17V0H7V20.17L1.42 14.58L0 16L8 24L16 16Z"
-              fill="currentcolor"
-            />
+            <use href="/sprite.svg#svg-arrow-down" />
           </svg>
         </a>
       </div>
