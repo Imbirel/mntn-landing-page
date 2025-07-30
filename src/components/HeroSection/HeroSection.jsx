@@ -1,51 +1,64 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import styles from './HeroSection.module.css';
 import { SvgLine } from '../Svg/SvgLine';
-
-const SKY_SPEED = 1.2;
-const MOUNTAINS_SPEED = 0.4;
-const GRASS_SPEED = 0.2;
-const TEXT_SPEED = 0.6;
-const WINDOW_HEIGHT_VALUE = 1000;
-
-const clamp = (value) => 1 - Math.min(Math.max(value / WINDOW_HEIGHT_VALUE, 0), 1);
+import { GRASS_SPEED, MOUNTAINS_SPEED, SKY_SPEED, TEXT_SPEED } from '@constants/app';
+import { clamp } from '@utils/clamp';
 
 export const HeroSection = function HeroSection() {
-  const [scrollY, setScrollY] = useState(0);
+  const heroRef = useRef(null);
+  const skyRef = useRef(null);
+  const mountainsRef = useRef(null);
+  const grassRef = useRef(null);
+  const containerRef = useRef(null);
+  const observerRef = useRef(null);
 
   useEffect(() => {
+    if (!heroRef.current) return;
+
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      const scrollY = window.scrollY;
+
+      if (skyRef.current) {
+        skyRef.current.style.transform = `translateY(${scrollY * SKY_SPEED}px)`;
+      }
+
+      if (mountainsRef.current) {
+        mountainsRef.current.style.transform = `translateY(${scrollY * MOUNTAINS_SPEED}px)`;
+      }
+
+      if (grassRef.current) {
+        grassRef.current.style.transform = `translateY(${scrollY * GRASS_SPEED}px)`;
+      }
+
+      if (containerRef.current) {
+        containerRef.current.style.transform = `translateY(${scrollY * TEXT_SPEED}px)`;
+        containerRef.current.style.opacity = `${clamp(scrollY)}`;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const callbackObserver = (entries) => {
+      if (entries[0].isIntersecting) {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+      } else {
+        window.removeEventListener('scroll', handleScroll);
+      }
+    };
+
+    observerRef.current = new IntersectionObserver(callbackObserver);
+    observerRef.current.observe(heroRef.current);
+
+    return () => {
+      observerRef.current.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   return (
-    <section id="hero" className={styles.section}>
-      <div
-        className={styles.skyLayer}
-        style={{ transform: `translateY(${-scrollY * SKY_SPEED}px)` }}
-      />
-
-      <div
-        className={styles.mountainsLayer}
-        style={{ transform: `translateY(${-scrollY * MOUNTAINS_SPEED}px)` }}
-      />
-
-      <div
-        className={styles.grassLayer}
-        style={{ transform: `translateY(${-scrollY * GRASS_SPEED}px)` }}
-      />
-
-      <div
-        className={styles.container}
-        style={{
-          transform: `translateY(${scrollY * TEXT_SPEED}px)`,
-          opacity: `${clamp(scrollY)}`,
-        }}
-      >
+    <section id="hero" className={styles.section} ref={heroRef}>
+      <div className={styles.skyLayer} ref={skyRef} />
+      <div className={styles.mountainsLayer} ref={mountainsRef} />
+      <div className={styles.grassLayer} ref={grassRef} />
+      <div className={styles.container} ref={containerRef}>
         <p className={styles.subtitle}>
           <SvgLine />A Hiking guide
         </p>

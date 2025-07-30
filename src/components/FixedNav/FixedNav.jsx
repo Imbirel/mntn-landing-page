@@ -47,7 +47,7 @@ export const FixedNav = function FixedNav() {
     if (!trackerRef.current) return;
 
     const sectionIndex = {
-      hero: 0,
+      'hero': 0,
       'article-01': 1,
       'article-02': 2,
       'article-03': 3,
@@ -84,16 +84,18 @@ export const FixedNav = function FixedNav() {
           </li>
         </ul>
       </aside>
-      <nav className={styles.navContainer}>
-        <div ref={trackerRef} className={styles.tracker} />
-        <ul className={styles.slider}>
-          {sectionIds.map((id, index) => (
-            <li key={id} ref={(el) => (navItemsRef.current[index] = el)}>
-              <a href={`#${id}`}>{index === 0 ? 'Start' : `0${index}`}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      <aside>
+        <nav className={styles.navContainer}>
+          <div ref={trackerRef} className={styles.tracker} />
+          <ul className={styles.slider}>
+            {sectionIds.map((id, index) => (
+              <li key={id} ref={(el) => (navItemsRef.current[index] = el)}>
+                <a href={`#${id}`}>{index === 0 ? 'Start' : `0${index}`}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
     </div>
   );
 };

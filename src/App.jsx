@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <Header />
-      <HeroSection />
       <FixedNav />
+      <HeroSection />
       <Articles />
       <Footer />
     </>
