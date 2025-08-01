@@ -18,6 +18,13 @@
     opacity: 0.6;
 }
 
+.hero {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+}
+
 .skyLayer, .mountainsLayer, .grassLayer {
     position: absolute;
     top: 0;

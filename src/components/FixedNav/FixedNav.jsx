@@ -1,67 +1,40 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './FixedNav.module.css';
-
-const sectionIds = ['hero', 'article-01', 'article-02', 'article-03'];
+import { SECTIONS_IDS } from '@constants/app';
 
 export const FixedNav = function FixedNav() {
-  const [activeSection, setActiveSection] = useState('hero');
+  const [activeId, setActiveId] = useState('hero');
   const trackerRef = useRef(null);
-  const sectionRefs = useRef({});
-  const navItemsRef = useRef([]);
+  const observerRef = useRef(null);
 
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    };
-
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
+          setActiveId(entry.target.id);
         }
       });
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    observerRef.current = new IntersectionObserver(observerCallback, { threshold: 0.5 });
 
-    sectionIds.forEach((id) => {
+    SECTIONS_IDS.forEach((id) => {
       const section = document.getElementById(id);
       if (section) {
-        sectionRefs.current[id] = section;
-        observer.observe(section);
+        observerRef.current.observe(section);
       }
     });
 
-    return () => {
-      sectionIds.forEach((id) => {
-        if (sectionRefs.current[id]) {
-          observer.unobserve(sectionRefs.current[id]);
-        }
-      });
-    };
+    return () => observerRef.current.disconnect();
   }, []);
 
   useEffect(() => {
-    if (!trackerRef.current) return;
+    const sectionIndex = SECTIONS_IDS.indexOf(activeId);
+    const trackerHeight = trackerRef.current.offsetHeight;
+    const offsetValue = sectionIndex * trackerHeight;
 
-    const sectionIndex = {
-      'hero': 0,
-      'article-01': 1,
-      'article-02': 2,
-      'article-03': 3,
-    }[activeSection];
-
-    if (sectionIndex === undefined || !navItemsRef.current[sectionIndex]) return;
-
-    const activeNavItem = navItemsRef.current[sectionIndex];
-    const { offsetTop } = activeNavItem;
-
-    trackerRef.current.style.cssText = `
-      top: ${offsetTop - 20}px;
-    `;
-  }, [activeSection]);
+    trackerRef.current.style.transform = `translateY(${offsetValue}px)`;
+  }, [activeId]);
 
   return (
     <div className={styles.container}>
@@ -86,10 +59,10 @@ export const FixedNav = function FixedNav() {
       </aside>
       <aside>
         <nav className={styles.navContainer}>
-          <div ref={trackerRef} className={styles.tracker} />
+          <div ref={trackerRef} className={styles.tracker} aria-hidden="true" />
           <ul className={styles.slider}>
-            {sectionIds.map((id, index) => (
-              <li key={id} ref={(el) => (navItemsRef.current[index] = el)}>
+            {SECTIONS_IDS.map((id, index) => (
+              <li key={id}>
                 <a href={`#${id}`}>{index === 0 ? 'Start' : `0${index}`}</a>
               </li>
             ))}

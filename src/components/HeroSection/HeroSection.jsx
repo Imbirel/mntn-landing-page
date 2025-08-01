@@ -13,8 +13,6 @@ export const HeroSection = function HeroSection() {
   const observerRef = useRef(null);
 
   useEffect(() => {
-    if (!heroRef.current) return;
-
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
@@ -54,7 +52,8 @@ export const HeroSection = function HeroSection() {
   }, []);
 
   return (
-    <section id="hero" className={styles.section} ref={heroRef}>
+    <section className={styles.section} ref={heroRef}>
+      <div id="hero" className={styles.hero} />
       <div className={styles.skyLayer} ref={skyRef} />
       <div className={styles.mountainsLayer} ref={mountainsRef} />
       <div className={styles.grassLayer} ref={grassRef} />
