@@ -52,12 +52,9 @@ export const HeroSection = function HeroSection() {
   }, []);
 
   return (
-    <section className={styles.section} ref={heroRef}>
+    <div className={styles.heroContainer} ref={heroRef}>
       <div id="hero" className={styles.hero} />
-      <div className={styles.skyLayer} ref={skyRef} />
-      <div className={styles.mountainsLayer} ref={mountainsRef} />
-      <div className={styles.grassLayer} ref={grassRef} />
-      <div className={styles.container} ref={containerRef}>
+      <hgroup className={styles.heroContent} ref={containerRef}>
         <p className={styles.subtitle}>
           <SvgLine />A Hiking guide
         </p>
@@ -68,7 +65,10 @@ export const HeroSection = function HeroSection() {
             <use href="/sprite.svg#svg-arrow-down" />
           </svg>
         </a>
-      </div>
-    </section>
+      </hgroup>
+      <div className={styles.skyLayer} ref={skyRef} />
+      <div className={styles.mountainsLayer} ref={mountainsRef} />
+      <div className={styles.grassLayer} ref={grassRef} />
+    </div>
   );
 };

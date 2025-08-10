@@ -5,7 +5,6 @@ import styles from './Articles.module.css';
 export const Articles = function Articles() {
   return (
     <div className={styles.container}>
-      <div className={styles.gradient} />
       <article id="article-01" className={styles.article} aria-labelledby="title-01">
         <div className={styles.articleContent}>
           <div className={styles.articleNumber}>
@@ -24,27 +23,33 @@ export const Articles = function Articles() {
             ratings set by various websites like All Trails and Modern Hiker. What type of hiker are
             you – novice, moderate, advanced moderate, expert, or expert backpacker?
           </p>
-          <a href="/" className={styles.readMore}>
+          <a href="#" className={styles.readMore}>
             read more
             <SvgArrowRight />
           </a>
         </div>
-        <img
-          loading="lazy"
-          src="/images/01.webp"
-          width="566"
-          height="720"
-          alt="A men walking on mountain"
-        />
+        <picture>
+          <source srcset="/images/01-377h.webp" media="(max-width: 1500px)" type="image/webp" />
+          <img
+            loading="lazy"
+            src="/images/01-720h.webp"
+            width="566"
+            height="720"
+            alt="A men walking on mountain"
+          />
+        </picture>
       </article>
       <article id="article-02" className={styles.article} aria-labelledby="title-02">
-        <img
-          loading="lazy"
-          src="/images/02.webp"
-          width="566"
-          height="720"
-          alt="A man on top of a camel"
-        />
+        <picture>
+          <source srcset="/images/02-377h.webp" media="(max-width: 1500px)" type="image/webp" />
+          <img
+            loading="lazy"
+            src="/images/02-720h.webp"
+            width="566"
+            height="720"
+            alt="A man on top of a camel"
+          />
+        </picture>
         <div className={styles.articleContent}>
           <div className={styles.articleNumber}>
             <svg aria-hidden="true" width="258" height="176" viewBox="0 0 258 176">
@@ -62,7 +67,7 @@ export const Articles = function Articles() {
             typical mistake hiking beginners make is wearing jeans and regular clothes, which will
             get heavy and chafe wif they get sweaty or wet.
           </p>
-          <a href="/" className={styles.readMore}>
+          <a href="#" className={styles.readMore}>
             read more
             <SvgArrowRight />
           </a>
@@ -86,18 +91,21 @@ export const Articles = function Articles() {
             to know what my next landmark is as I hike. For example, I’ll read the guide and know
             that say, in a mile, I make a right turn at the junction..
           </p>
-          <a href="/" className={styles.readMore}>
+          <a href="#" className={styles.readMore}>
             read more
             <SvgArrowRight />
           </a>
         </div>
-        <img
-          loading="lazy"
-          src="/images/03.webp"
-          width="566"
-          height="720"
-          alt="A man holding a compass"
-        />
+        <picture>
+          <source srcset="/images/03-377h.webp" media="(max-width: 1500px)" type="image/webp" />
+          <img
+            loading="lazy"
+            src="/images/03-720h.webp"
+            width="566"
+            height="720"
+            alt="A man holding a compass"
+          />
+        </picture>
       </article>
     </div>
   );

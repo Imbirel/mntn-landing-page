@@ -1,63 +1,109 @@
 .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-top: -490px;
-    padding: 0 229px;
-}
-
-.gradient {
-    position: absolute;
-    top: -12%;
-    left: 0;
-    right: 0;
-    z-index: 5;
-    content: "";
-    display: block;
-    height: 700px;
-    background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 75%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: -20rem;
+  padding: 0 12.73rem;
+  padding-bottom: 5.56rem;
 }
 
 .article {
-    z-index: 6;
-    display: flex;
-    gap: 114px;
-    padding: 100px 0;
+  z-index: 6;
+  display: flex;
+  gap: 6.33rem;
+  max-width: 1462px;
+  padding: 5.56rem 0;
 }
 
 .articleContent {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 27px;
-    padding: 141px 0 140px 150px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 7.84rem 0 7.78rem 8.34rem;
 }
 
 .articleNumber {
-    position: absolute;
-    top: 60px;
-    left: 10px;
-    z-index: 1;
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  z-index: 1;
 }
 
 .subtitle {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    font-weight: 800;
-    letter-spacing: 6px;
-    color: var(--color-accent);
-    text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: var(--color-accent);
+  text-transform: uppercase;
 }
 
 .text {
-    line-height: 32px;
+  line-height: 1.78rem;
 }
 
 .readMore {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: fit-content;
+  color: var(--color-accent);
+}
+
+img {
+  width: 30vw;
+  object-fit: contain;
+}
+
+@media (max-width: 1500px) {
+  .container {
+    margin-top: -40rem;
+  }
+
+  .article {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .articleContent {
+    padding-bottom: 2.5rem;
+  }
+
+  img {
     display: flex;
-    align-items: center;
-    gap: 16px;
-    width: fit-content;
-    color: var(--color-accent);
+    height: 377px;
+    width: 100%;
+  }
+
+  .articleContent {
+    order: -1;
+    padding-left: 0;
+    max-width: 566px;
+  }
+
+  .articleNumber {
+    left: -8.34rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .container {
+    padding: 0 8rem;
+  }
+}
+
+@media (max-width: 920px) {
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 2rem;
+  }
+
+  .articleNumber {
+    left: -6rem;
+  }
 }

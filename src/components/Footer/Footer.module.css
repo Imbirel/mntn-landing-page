@@ -1,50 +1,102 @@
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 500px;
-    padding: 100px 229px 120px 229px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0 12.73rem;
+  padding-bottom: 120px;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+  width: 1462px;
 }
 
 .footerInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .mntn {
-    font: 32px 'Chronicle Display', serif;
-    font-weight: 900;
-    letter-spacing: 1px;
+  font: 32px 'Chronicle Display', serif;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
 .footerText {
-    max-width: 300px;
-    margin-top: 24px;
-    line-height: 32px;
+  margin-top: 24px;
+  line-height: 32px;
 }
 
 .copyright {
-    opacity: 0.6;
-    font-weight: 500;
-    line-height: 32px;
+  opacity: 0.6;
+  font-weight: 500;
+  line-height: 32px;
 }
 
 .nav {
-    display: flex;
-    justify-content: space-between;
-    width: 566px;
+  display: flex;
+  justify-content: space-between;
+  width: 566px;
 }
 
 .nav h3 {
-    margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 
 .links {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+@media (max-width: 1400px) {
+  .footer {
+    padding-right: 10rem;
+    padding-left: 10rem;
+  }
+
+  .footerContent {
     flex-direction: column;
-    gap: 16px;
-    font-weight: 500;
-    line-height: 32px;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .footerInfo {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .footerInfo {
+    width: 63dvw;
+  }
+
+  .nav {
+    width: 63dvw;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 0 3rem 5rem;
+  }
+
+  .footerContent {
+    gap: 3rem;
+  }
+
+  .footerInfo {
+    width: 75dvw;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 2rem;
+    width: 75dvw;
+  }
 }

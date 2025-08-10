@@ -9,8 +9,10 @@ function App() {
     <>
       <Header />
       <FixedNav />
-      <HeroSection />
-      <Articles />
+      <main>
+        <HeroSection />
+        <Articles />
+      </main>
       <Footer />
     </>
   );

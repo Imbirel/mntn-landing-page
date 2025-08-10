@@ -1,82 +1,160 @@
-.section {
+.heroContainer {
   position: relative;
   display: flex;
+  justify-content: center;
   height: 1600px;
+  width: 100%;
   overflow: hidden;
 }
 
-.section::before {
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    left: 0;
-    content: "";
-    display: block;
-    height: 100%;
-    background-image: linear-gradient(135deg, #0b1d26, rgba(11, 29, 38, 0) 87%);
-    opacity: 0.6;
+.heroContainer::before {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  display: block;
+  height: 100%;
+  background-image: linear-gradient(135deg, #0b1d26, rgba(11, 29, 38, 0) 87%);
+  opacity: 0.6;
 }
 
 .hero {
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  height: 100dvh;
+  width: 100%;
 }
 
-.skyLayer, .mountainsLayer, .grassLayer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    will-change: transform;
-    pointer-events: none;
-}
-
-.skyLayer {
-    z-index: 0;
-    background-image: url('/images/bg-image-sky.webp');
-    background-position: center 0;
-}
-
-.mountainsLayer {
-    z-index: 1;
-    background-image: url('/images/bg-image-mountains.webp');
-    background-position: center 350px;
-}
-
-.grassLayer {
-    z-index: 4;
-    background-image: url('/images/bg-image-grass.webp');
-    background-position: center 620px;
-}
-
-.container {
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 32px;
-    margin-top: 287px;
-    padding: 0 400px 0 550px;
-    will-change: transform, opacity;
+.heroContent {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.78rem;
+  margin-top: 25dvh;
+  max-width: 1000px;
+  padding-left: 3.89rem;
+  will-change: transform, opacity;
 }
 
 .subtitle {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    font-weight: 800;
-    letter-spacing: 6px;
-    color: var(--color-accent);
-    text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  color: var(--color-accent);
+  text-transform: uppercase;
 }
 
 .scrolldown {
-    display: flex;
-    gap: 16px;
-    width: fit-content;
+  display: flex;
+  gap: 16px;
+  width: fit-content;
+}
+
+.skyLayer,
+.mountainsLayer,
+.grassLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  will-change: transform;
+  pointer-events: none;
+  background-size: contain;
+  max-width: 1920px;
+}
+
+.skyLayer {
+  z-index: 0;
+  background-image: url('/images/bg-sky-1920.webp');
+  background-position: top;
+}
+
+.mountainsLayer {
+  z-index: 1;
+  background-image: url('/images/bg-mountains-1920.webp');
+  background-position: center 36dvh;
+}
+
+.grassLayer {
+  z-index: 4;
+  background-image: url('/images/bg-grass-1920.webp');
+  background-position: center 53dvh;
+}
+
+@media (max-width: 1300px) {
+  .heroContainer {
+    height: 1400px;
+  }
+
+  .heroContent {
+    max-width: 800px;
+  }
+
+  .skyLayer,
+  .mountainsLayer,
+  .grassLayer {
+    min-width: 1300px;
+  }
+
+  .skyLayer {
+    background-image: url('/images/bg-sky-1300.webp');
+  }
+
+  .mountainsLayer {
+    background-image: url('/images/bg-mountains-1300.webp');
+  }
+
+  .grassLayer {
+    background-image: url('/images/bg-grass-1300.webp');
+  }
+}
+
+@media (max-width: 920px) {
+  .heroContainer {
+    height: 1200px;
+  }
+
+  .heroContent {
+    max-width: 600px;
+  }
+
+  .skyLayer,
+  .mountainsLayer,
+  .grassLayer {
+    min-width: 1100px;
+  }
+
+  .skyLayer {
+    background-image: url('/images/bg-sky-800.webp');
+    min-width: 1500px;
+  }
+
+  .mountainsLayer {
+    background-image: url('/images/bg-mountains-800.webp');
+  }
+
+  .grassLayer {
+    background-image: url('/images/bg-grass-800.webp');
+  }
+}
+
+@media (max-width: 790px) {
+  .heroContent {
+    max-width: 500px;
+  }
+
+  .skyLayer,
+  .mountainsLayer,
+  .grassLayer {
+    min-width: 800px;
+  }
+
+  .skyLayer {
+    min-width: 1200px;
+  }
 }
